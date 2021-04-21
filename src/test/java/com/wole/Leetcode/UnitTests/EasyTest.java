@@ -2,10 +2,7 @@
 
 package com.wole.Leetcode.UnitTests;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import com.wole.Leetcode.Easy;
 
 public class EasyTest {
@@ -48,4 +45,48 @@ public class EasyTest {
         //Assert
         Assertions.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    @DisplayName("Reverse an integer")
+    public void ReverseInteger() throws Exception {
+        // Arrange
+        int intToRev = -123;
+
+        //Act
+        int actual = easy.reverse(intToRev);
+        int expected = -321;
+
+        //Assert
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Palindrome")
+    public void Palindrome() throws Exception {
+        // Arrange
+        int intToRev = 121;
+
+        //Act
+        boolean actual = easy.isPalindrome(intToRev);
+        boolean expected = true;
+
+        //Assert
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Roman numeral to Integer")
+    public void RomanToInt() throws Exception {
+        // Arrange
+        String romanNumberal = "MCMXCIV";
+
+        //Act
+        int actual = easy.romanToInt(romanNumberal);
+        int expected = 1994;
+
+        //Assert
+        Assertions.assertEquals(expected, actual);
+    }
+
+
 }
