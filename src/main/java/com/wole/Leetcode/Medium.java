@@ -1,5 +1,10 @@
 package com.wole.Leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class Medium {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode init = new ListNode(0);
@@ -27,5 +32,27 @@ public class Medium {
             curr.next = new ListNode(carry);
         }
         return init.next;
+    }
+    public String largestTimeFromDigits(int[] arr) {
+        // Arrays.sort(arr, Collections.reverseOrder());
+
+        return "You";
+    }
+
+    public List<Integer> findDuplicates(int[] nums) {
+        List<Integer> dupes = new ArrayList<>();
+        int size = nums.length;
+
+        // O(n) space
+        int[] count = new int[size+1];
+        for(int i = 0; i < size; i++){
+            if (count[nums[i]] == 0){
+                count[nums[i]]++;
+            }
+            else{
+                dupes.add(nums[i]);
+            }
+        }
+        return dupes;
     }
 }

@@ -7,6 +7,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MediumTest {
     Medium medium;
 
@@ -38,5 +42,15 @@ public class MediumTest {
         Assertions.assertAll("TestTwoSums", () -> Assertions.assertEquals(expected.val, actual.val),
                 () -> Assertions.assertEquals(expected.next.val, actual.next.val),
                 () -> Assertions.assertEquals(expected.next.next.val, actual.next.next.val));
+    }
+
+    @Test
+    @DisplayName("Find Duplicates")
+    public void FindDuplicates(){
+        List<Integer> expected = new ArrayList<>(Arrays.asList(new Integer[]{1}));
+        List<Integer> actual = medium.findDuplicates(new int[]{4,3,2,7,8,2,3,1});
+
+        Assertions.assertAll("FindDuplicates", () -> Assertions.assertEquals(expected.get(0), actual.get(0)),
+                () -> Assertions.assertEquals(expected.get(1), actual.get(1)));
     }
 }
